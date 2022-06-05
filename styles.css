@@ -16,7 +16,7 @@ body {
 	--primary-text-color: #000000;
 	--secondary-text-color: #5c5c62;
 	--durability-text-color: #6a737d9c;
-	--icon-color: rgb(34, 28, 185);
+	--icon-color: rgb(85, 178, 215);
 	--border-color: #ff9a0045;
 	--text-decoration-color: #f1f807;
 }
@@ -209,7 +209,7 @@ body {
 
 .resume__skills--item.html:before {
 	width: 70%;
-	background: var(--icon-color);
+	background: #593fd9;
 }
 
 .resume__skills--item.css:before {
@@ -219,12 +219,16 @@ body {
 
 .resume__skills--item.js:before {
 	width: 50%;
-	background: var(--border-color);
+	background: #27c44f;
 }
 
 .resume__skills--item.vue:before {
 	width: 15%;
-	background: var(--durability-text-color);
+	background: #c93030;
+}
+
+.worked-with .resume__skills--item {
+	color: gray;
 }
 
 .languages h3 {
@@ -322,6 +326,10 @@ body {
 	height: 200px;
 	padding: 10px;
 	overflow: hidden;
+}
+
+.resume__likes--item:hover {
+	cursor: pointer;
 }
 
 .resume__likes--item:hover img {
