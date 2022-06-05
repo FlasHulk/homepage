@@ -23,7 +23,7 @@ body {
 }
 
 .container {
-	margin: 0 auto;
+	margin: 50px auto;
 	padding: 0 30px;
 	max-width: 900px;
 }
@@ -48,6 +48,14 @@ body {
 	background: #ffffff;
 }
 
+.resume h2 {
+	padding-bottom: 30px;
+	font-size: 30px;
+	font-weight: bold;
+	line-height: 110%;
+}
+
+/*Hero section*/
 .resume__hero {}
 
 .resume__hero--avatar {
@@ -151,3 +159,9 @@ body {
 .contact-info__link.skype {}
 
 .contact-info__link.github {}
+
+/*Intro section*/
+.resume__intro p {
+	font-size: 17px;
+	color: var(--secondary-text-color);
+}
