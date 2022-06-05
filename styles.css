@@ -5,20 +5,24 @@
 	box-sizing: border-box;
 }
 
+html {
+}
+
 body {
 	font-family: Arial, Helvetica, sans-serif;
 	line-height: 1.5;
+	background: #e1e1e1;
 
-	--primary-text-color: #181820;
+	--primary-text-color: #000000;
 	--secondary-text-color: #5c5c62;
 	--durability-text-color: #6a737d9c;
-	--icon-color: #6a737d;
+	--icon-color: rgb(85, 178, 215);
 	--border-color: #ff9a0045;
-	--text-decoration-color: #ff9a00;
+	--text-decoration-color: #f1f807;
 }
 
 .container {
-	margin: 0 auto;
+	margin: 50px auto;
 	padding: 0 30px;
 	max-width: 900px;
 }
@@ -37,231 +41,331 @@ body {
 
 .resume {
 	margin: 50px auto;
-	border: 1px solid #f5f5f5;
-	box-shadow: 1px 1px 7px 7px #f5f5f5;
-	padding: 30px 0;
+	box-shadow: 1px 1px 20px 7px #554e4e;
+	padding: 0 0 30px;
 	max-width: 900px;
+	background: #ffffff;
 }
 
-.resume__block {
-	border-bottom: 3px solid var(--border-color);
-	padding-bottom: 30px;
-	margin-bottom: 15px;
+.resume h2 {
+	margin-bottom: 30px;
+	font-size: 30px;
+	font-weight: bold;
+	line-height: 110%;
 }
 
-@media screen and (max-width: 576px) {
-
-	.main-info,
-	.contact_info_container {
-			flex-direction: column;
-	}
-
-	.contact_info_container {
-			align-items: center;
-	}
-
-	.contact-info__block:not(:last-child) {
-			margin-bottom: 20px;
-	}
-
-	.experiences {
-			margin-right: 0;
-	}
+.resume h3 {
+	margin-bottom: 20px;
+	font-weight: bold;
+	font-size: 18px;
 }
 
-/* Contact info styles */
-.contact-info__header,
-.contact-info__sub-header {
-		text-align: center;
+/*Hero section*/
+.resume__hero {}
+
+.resume__hero--avatar {
+	position: relative;
+	flex: 1;
+}
+
+.resume__hero--avatar img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+
+.resume__hero--contact-info {
+	flex: 2;
+}
+
+.contact-info_wrap {
+	padding: 30px;
 }
 
 .contact-info__header {
-		color: var(--primary-text-color);
-		margin-bottom: 15px;
-		text-decoration-color: var(--text-decoration-color);
-		text-decoration-line: underline;
+	padding-bottom: 20px;
+	font-size: 45px;
+	font-weight: bold;
+	line-height: 100%;
 }
 
 .contact-info__sub-header {
-		color: var(--secondary-text-color);
-		margin-bottom: 30px;
-}
-
-.contact-info__block {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-}
-
-.contact-info__block--center {
-		justify-content: center;
+	padding-bottom: 10px;
+	font-size: 18px;
+	font-weight: bold;
 }
 
 .contact-info__item {
-		color: var(--secondary-text-color);
-		text-decoration: none;
-		display: flex;
-		justify-content: start;
+	display: grid;
+	grid-template-columns: 0.5fr 2fr;
 }
 
-.contact-info__item:not(:last-child) {
-		margin-bottom: 20px;
+.contact-info__item p {
+	padding-right: 15px;
+	color: var(--primary-text-color);
+	font-weight: bold;
 }
 
-.contact-info__item-icon-wrapper {
-		margin-right: 10px;
-		width: 20px;
-		display: flex;
-		justify-content: center;
+.contact-info__item a,
+.contact-info__item span {
+	color: var(--secondary-text-color) !important;
+	text-decoration: none;
 }
 
-.contact-info__item-icon path {
-		fill: var(--icon-color);
+.contact-info__item a:hover {
+	text-decoration: underline;
 }
 
-.contact-info__item-icon {
-		height: 1.1428rem;
-		vertical-align: text-bottom;
+.contact-info_links {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	height: 60px;
+	background: var(--icon-color);
 }
 
-.contact-info__avatar {
-		border-radius: 50%;
-		width: 100px;
-		height: 100px;
-		object-fit: cover;
-		border: 3px solid;
-		border-color: var(--text-decoration-color);
-}
-
-/* Intro and skills styles */
-.intro {
+.contact-info__link {
 	display: flex;
-	justify-content: start;
-}
-
-.intro__icon-wrapper {
-	margin-right: 30px;
-	width: 30px;
-	display: flex;
+	align-items: center;
 	justify-content: center;
 }
 
-.intro__icon {
-	height: 1.1428rem;
-	vertical-align: text-bottom;
+.contact-info__link + .contact-info__link {
+	border-left: 4px solid #fdcc00
 }
 
-.intro__icon path {
-	fill: var(--text-decoration-color);
+.contact-info__link svg {
+	width: auto;
+	height: 30px;
 }
 
-.intro_text {
+.contact-info__link svg path,
+.contact-info__link svg circle {
+	fill: #fff !important;
+	transition: .3s;
+}
+
+.contact-info__link:hover svg path,
+.contact-info__link:hover svg circle {
+	fill: #fdcc00 !important;
+}
+
+/*Intro section*/
+.resume__intro p {
+	font-size: 17px;
 	color: var(--secondary-text-color);
-	text-align: justify;
 }
 
-.skills__header {
+/*Skills section*/
+.resume__skills {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 30px;
+}
+
+.main-skills,
+.worked-with {
+	width: calc(100% / 2 - 15px);
+}
+
+.languages {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0 30px;
+}
+
+.resume__skills--item {
+	position: relative;
+	align-items: center;
+	padding: 10px;
+	background: #e3e3e3;
+	box-shadow: 0 1px 5px 2px #b9b1b170;
+	color: white;
+	font-weight: bold;
+	overflow: hidden;
+}
+
+.resume__skills--item + .resume__skills--item {
+	margin-top: 10px;
+}
+
+.resume__skills--item .item-name,
+.resume__skills--item .item-percent {
+	position: relative;
+}
+
+.resume__skills--item:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+}
+
+.resume__skills--item.html:before {
+	width: 70%;
+	background: #593fd9;
+}
+
+.resume__skills--item.css:before {
+	width: 70%;
+	background: var(--text-decoration-color);
+}
+
+.resume__skills--item.js:before {
+	width: 50%;
+	background: #27c44f;
+}
+
+.resume__skills--item.vue:before {
+	width: 15%;
+	background: #c93030;
+}
+
+.worked-with .resume__skills--item {
+	color: gray;
+}
+
+.languages h3 {
+	width: 100%;
+}
+
+.languages-item {
+	width: calc(100% / 3 - 20px);
+	margin: 0 !important;
+}
+
+.languages-item:before {
+	background-repeat: no-repeat !important;
+	background-size: 100% 100% !important;
+}
+
+.languages-item:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.3);
+	display: block;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+}
+
+.languages-item.ua:before {
+	background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flag_of_Ukraine.svg/800px-Flag_of_Ukraine.svg.png?20100406171642');
+}
+
+.languages-item.en:before {
+	background: url('https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_the_United_Kingdom.svg/1200px-Flag_of_the_United_Kingdom.svg.png');
+}
+
+.languages-item.blg:before {
+	background: url('https://edl2021.com/wp-content/uploads/2021/09/depositphotos_10282669-stock-photo-bulgarian-flag.jpg');
+}
+
+.languages-item p,
+.languages-item span {
+	position: relative;
+	z-index: 1;
+}
+
+/*Education section*/
+.resume__education {}
+
+.resume__education--list {}
+
+.resume__education--item {
+	box-shadow: 0 1px 10px 2px #b9b1b170;
+	padding: 20px;
+}
+
+.resume__education--item + .resume__education--item {
+	margin-top: 20px;
+}
+
+.resume__education--item_speciality {
+	padding-bottom: 20px;
+	font-size: 18px;
+	font-weight: bold;
+	color: var(--primary-text-color);
+}
+
+.resume__education--item_institution {
+	padding-bottom: 10px;
+	font-size: 16px;
+	font-weight: bold;
 	color: var(--secondary-text-color);
+}
+
+.resume__education--item_years {
+	font-size: 16px;
+	color: var(--secondary-text-color)
+}
+
+/*Likes section*/
+
+.resume__likes {}
+
+.resume__likes--list {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 30px;
+}
+
+.resume__likes--item {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 200px;
+	padding: 10px;
+	overflow: hidden;
+}
+
+.resume__likes--item:hover {
+	cursor: pointer;
+}
+
+.resume__likes--item:hover img {
+	transform: translate(-50%, -50%) scale(1.2);
+}
+
+.resume__likes--item img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	transition: .3s;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+	z-index: 0;
+}
+
+.resume__likes--item:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 1;
+}
+
+.resume__likes--item p {
+	position: relative;
+	font-size: 20px;
+	font-weight: bold;
 	text-align: center;
-	margin-bottom: 15px;
-}
-
-.skills__text {
-	color: var(--secondary-text-color);
-	text-align: justify;
-}
-
-/* Experience and additonal info styles */
-.experiences {
-	flex: 1 1 60%;
-	margin-right: 50px;
-}
-
-.experiences__header {
-	color: var(--secondary-text-color);
-	text-align: left;
-	margin-bottom: 20px;
-}
-
-.experiences__company-header-durability {
-	color: var(--durability-text-color);
-	text-align: left;
-	margin-bottom: 10px;
-	font-size: 15px;
-}
-
-.experiences__company-header-name {
-	color: var(--primary-text-color);
-	text-decoration-color: var(--text-decoration-color);
-	text-decoration-line: underline;
-	text-align: left;
-	margin-bottom: 20px;
-}
-
-.experiences__company-project {
-	margin-left: 15px;
-	margin-bottom: 25px;
-}
-
-.experiences__company-project-role {
-	color: var(--durability-text-color);
-	text-align: left;
-	margin-bottom: 10px;
-	font-size: 15px;
-}
-
-.experiences__company-project-name {
-	color: var(--primary-text-color);
-	text-align: left;
-	margin-bottom: 10px;
-}
-
-.experiences__company-project-responsibilities {
-	color: var(--secondary-text-color);
-	padding-left: 20px;
-}
-
-.additional-info {
-	flex: 1 1 40%;
-}
-
-.additional-info__education {
-	margin-bottom: 20px;
-}
-
-.additional-info__education-header {
-	color: var(--secondary-text-color);
-	text-align: left;
-	margin-bottom: 20px;
-}
-
-.additional-info__education-university-durability {
-	color: var(--durability-text-color);
-	text-align: left;
-	margin-bottom: 10px;
-	font-size: 15px;
-}
-
-.additional-info__education-university-speciality {
-	color: var(--primary-text-color);
-	text-align: left;
-	margin-bottom: 10px;
-}
-
-.additional-info__education-university-name {
-	color: var(--secondary-text-color);
-}
-
-.additional-info__languages {
-	margin-bottom: 20px;
-}
-
-.additional-info__languages-header {
-	color: var(--secondary-text-color);
-	text-align: left;
-	margin-bottom: 20px;
-}
-
-.additional-info__languages-item {
-	color: var(--secondary-text-color);
+	color: white;
+	z-index: 2;
 }
