@@ -5,14 +5,19 @@
 	box-sizing: border-box;
 }
 
+html {
+	height: 100%;
+}
+
 body {
 	font-family: Arial, Helvetica, sans-serif;
 	line-height: 1.5;
+	/*background: linear-gradient(180deg, rgba(0,59,255,1) 0%, rgba(247,255,0,1) 100%);*/
 
-	--primary-text-color: #181820;
+	--primary-text-color: #000000;
 	--secondary-text-color: #5c5c62;
 	--durability-text-color: #6a737d9c;
-	--icon-color: #6a737d;
+	--icon-color: rgb(34, 28, 185);
 	--border-color: #ff9a0045;
 	--text-decoration-color: #ff9a00;
 }
@@ -37,8 +42,112 @@ body {
 
 .resume {
 	margin: 50px auto;
-	border: 1px solid #f5f5f5;
 	box-shadow: 1px 1px 7px 7px #f5f5f5;
-	padding: 30px 0;
+	padding: 0 0 30px;
 	max-width: 900px;
+	background: #ffffff;
 }
+
+.resume__hero {}
+
+.resume__hero--avatar {
+	position: relative;
+	flex: 1;
+}
+
+.resume__hero--avatar img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+
+.resume__hero--contact-info {
+	flex: 2;
+}
+
+.contact-info_wrap {
+	padding: 30px;
+}
+
+.contact-info__header {
+	padding-bottom: 20px;
+	font-size: 45px;
+	font-weight: bold;
+	line-height: 100%;
+}
+
+.contact-info__sub-header {
+	padding-bottom: 10px;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.contact-info__block {}
+
+.contact-info__item {
+	display: grid;
+	grid-template-columns: 0.5fr 2fr;
+}
+
+.contact-info__item p {
+	padding-right: 15px;
+	color: var(--primary-text-color);
+	font-weight: bold;
+}
+
+.contact-info__item a,
+.contact-info__item span {
+	color: var(--secondary-text-color) !important;
+	text-decoration: none;
+}
+
+.contact-info__item a:hover {
+	text-decoration: underline;
+}
+
+.contact-info_links {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	height: 60px;
+	background: var(--icon-color);
+}
+
+.contact-info__link {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.contact-info__link + .contact-info__link {
+	border-left: 4px solid #fdcc00
+}
+
+.contact-info__link svg {
+	width: auto;
+	height: 30px;
+}
+
+.contact-info__link svg path,
+.contact-info__link svg circle {
+	fill: #fff !important;
+	transition: .3s;
+}
+
+.contact-info__link:hover svg path,
+.contact-info__link:hover svg circle {
+	fill: #fdcc00 !important;
+}
+
+.contact-info__link.tg {}
+
+.contact-info__link.inst {}
+
+.contact-info__link.fb {}
+
+.contact-info__link.in {}
+
+.contact-info__link.skype {}
+
+.contact-info__link.github {}
