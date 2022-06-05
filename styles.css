@@ -49,10 +49,16 @@ body {
 }
 
 .resume h2 {
-	padding-bottom: 30px;
+	margin-bottom: 30px;
 	font-size: 30px;
 	font-weight: bold;
 	line-height: 110%;
+}
+
+.resume h3 {
+	margin-bottom: 20px;
+	font-weight: bold;
+	font-size: 18px;
 }
 
 /*Hero section*/
@@ -165,3 +171,110 @@ body {
 	font-size: 17px;
 	color: var(--secondary-text-color);
 }
+
+/*Skills section*/
+.resume__skills {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 30px;
+}
+
+.resume__skills--item {
+	position: relative;
+	align-items: center;
+	padding: 10px;
+	background: #bbb6b6;
+	border-radius: 20px;
+	color: white;
+	font-weight: bold;
+	overflow: hidden;
+}
+
+.resume__skills--item + .resume__skills--item {
+	margin-top: 10px;
+}
+
+.resume__skills--item .item-name,
+.resume__skills--item .item-percent {
+	position: relative;
+}
+
+.resume__skills--item .item-name {}
+
+.resume__skills--item .item-percent {}
+
+.resume__skills--item:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+}
+
+.resume__skills--item.html:before {
+	width: 70%;
+	background: var(--icon-color);
+}
+
+.resume__skills--item.css:before {
+	width: 70%;
+	background: var(--text-decoration-color);
+}
+
+.resume__skills--item.js:before {
+	width: 50%;
+	background: var(--border-color);
+}
+
+.resume__skills--item.vue:before {
+	width: 15%;
+	background: var(--durability-text-color);
+}
+
+.main-skills {}
+
+.worked-with {}
+
+.worked-with p {}
+
+.languages {}
+
+.languages-item:before {
+	background-repeat: no-repeat !important;
+	background-size: 100% 100% !important;
+}
+
+.languages-item:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.3);
+	display: block;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+}
+
+.languages-item.ua:before {
+	background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flag_of_Ukraine.svg/800px-Flag_of_Ukraine.svg.png?20100406171642');
+}
+
+.languages-item.en:before {
+	background: url('https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_the_United_Kingdom.svg/1200px-Flag_of_the_United_Kingdom.svg.png');
+}
+
+.languages-item.blg:before {
+	background: url('https://edl2021.com/wp-content/uploads/2021/09/depositphotos_10282669-stock-photo-bulgarian-flag.jpg');
+}
+
+.languages-item p,
+.languages-item span {
+	position: relative;
+	z-index: 1;
+}
+
+.languages-item span {}
