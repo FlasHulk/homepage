@@ -19,7 +19,7 @@ body {
 	--durability-text-color: #6a737d9c;
 	--icon-color: rgb(34, 28, 185);
 	--border-color: #ff9a0045;
-	--text-decoration-color: #ff9a00;
+	--text-decoration-color: #f1f807;
 }
 
 .container {
@@ -98,8 +98,6 @@ body {
 	font-weight: bold;
 }
 
-.contact-info__block {}
-
 .contact-info__item {
 	display: grid;
 	grid-template-columns: 0.5fr 2fr;
@@ -154,18 +152,6 @@ body {
 	fill: #fdcc00 !important;
 }
 
-.contact-info__link.tg {}
-
-.contact-info__link.inst {}
-
-.contact-info__link.fb {}
-
-.contact-info__link.in {}
-
-.contact-info__link.skype {}
-
-.contact-info__link.github {}
-
 /*Intro section*/
 .resume__intro p {
 	font-size: 17px;
@@ -174,17 +160,29 @@ body {
 
 /*Skills section*/
 .resume__skills {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	display: flex;
+	flex-wrap: wrap;
 	gap: 30px;
+}
+
+.main-skills,
+.worked-with {
+	width: calc(100% / 2 - 15px);
+}
+
+.languages {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0 30px;
 }
 
 .resume__skills--item {
 	position: relative;
 	align-items: center;
 	padding: 10px;
-	background: #bbb6b6;
-	border-radius: 20px;
+	background: #e3e3e3;
+	box-shadow: 0 1px 5px 2px #b9b1b170;
 	color: white;
 	font-weight: bold;
 	overflow: hidden;
@@ -198,10 +196,6 @@ body {
 .resume__skills--item .item-percent {
 	position: relative;
 }
-
-.resume__skills--item .item-name {}
-
-.resume__skills--item .item-percent {}
 
 .resume__skills--item:before {
 	content: '';
@@ -234,13 +228,14 @@ body {
 	background: var(--durability-text-color);
 }
 
-.main-skills {}
+.languages h3 {
+	width: 100%;
+}
 
-.worked-with {}
-
-.worked-with p {}
-
-.languages {}
+.languages-item {
+	width: calc(100% / 3 - 20px);
+	margin: 0 !important;
+}
 
 .languages-item:before {
 	background-repeat: no-repeat !important;
@@ -277,4 +272,35 @@ body {
 	z-index: 1;
 }
 
-.languages-item span {}
+/*Education section*/
+.resume__education {}
+
+.resume__education--list {}
+
+.resume__education--item {
+	box-shadow: 0 1px 10px 2px #b9b1b170;
+	padding: 20px;
+}
+
+.resume__education--item + .resume__education--item {
+	margin-top: 20px;
+}
+
+.resume__education--item_speciality {
+	padding-bottom: 20px;
+	font-size: 18px;
+	font-weight: bold;
+	color: var(--primary-text-color);
+}
+
+.resume__education--item_institution {
+	padding-bottom: 10px;
+	font-size: 16px;
+	font-weight: bold;
+	color: var(--secondary-text-color);
+}
+
+.resume__education--item_years {
+	font-size: 16px;
+	color: var(--secondary-text-color)
+}
