@@ -91,6 +91,20 @@ body {
 	opacity: 1;
 }
 
+.anim.animTopImmersion {
+	transform: translateY(-30%);
+	opacity: 0;
+	transition: 1s ease;
+}
+
+.anim.animTopImmersion.active {
+	transform: translateY(0);
+	opacity: 1;
+}
+
+.anim.animSkills {
+
+}
 /*Hero section*/
 .resume__hero {}
 
@@ -238,22 +252,27 @@ body {
 	z-index: 0;
 }
 
-.resume__skills--item.html:before {
+.main-skills .resume__skills--item:before {
+	width: 0;
+	transition: 1s;
+}
+
+.resume__skills--item.html.active:before {
 	width: 70%;
 	background: #593fd9;
 }
 
-.resume__skills--item.css:before {
+.resume__skills--item.css.active:before {
 	width: 70%;
 	background: var(--text-decoration-color);
 }
 
-.resume__skills--item.js:before {
+.resume__skills--item.js.active:before {
 	width: 50%;
 	background: #27c44f;
 }
 
-.resume__skills--item.vue:before {
+.resume__skills--item.vue.active:before {
 	width: 15%;
 	background: #c93030;
 }
