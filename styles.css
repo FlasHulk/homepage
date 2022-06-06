@@ -5,9 +5,6 @@
 	box-sizing: border-box;
 }
 
-html {
-}
-
 body {
 	font-family: Arial, Helvetica, sans-serif;
 	line-height: 1.5;
@@ -60,8 +57,68 @@ body {
 	font-size: 18px;
 }
 
+.rocket {
+	position: fixed;
+	right: 50px;
+	bottom: 50px;
+	opacity: 0;
+	visibility: hidden;
+	width: 50px;
+	height: 50px;
+	background: var(--icon-color);
+	border: 1px solid  var(--text-decoration-color);
+	transition: .4s;
+}
+
+.rocket:before {
+	content: "";
+	position: absolute;
+	top: calc(50% + 2px);
+	left: 50%;
+	transform: translate(-50%, -50%) rotate(45deg);
+	display: block;
+	width: 10px;
+	height: 10px;
+	border-top: 2px solid var(--text-decoration-color);
+	border-left: 2px solid var(--text-decoration-color);
+}
+
+.rocket.active {
+	visibility: visible;
+	opacity: 1;
+}
+
+.anim.animTopImmersion {
+	transform: translateY(-30%);
+	opacity: 0;
+	transition: 1s ease;
+}
+
+.anim.animTopImmersion.active {
+	transform: translateY(0);
+	opacity: 1;
+}
+
+@media screen and (max-width: 767px) {
+	.rocket {
+		right: 10px;
+		bottom: 10px;
+		width: 40px;
+		height: 40px;
+	}
+}
+
+@media screen and (max-width: 576px) {
+	.container {
+		margin: 30px auto;
+		padding: 0 15px;
+	}
+
+	.resume h2 {
+		font-size: 25px;
+	}
+}
 /*Hero section*/
-.resume__hero {}
 
 .resume__hero--avatar {
 	position: relative;
@@ -151,10 +208,63 @@ body {
 	fill: #fdcc00 !important;
 }
 
+@media screen and (max-width: 767px) {
+	.resume__hero {
+		flex-direction: column;
+	}
+
+	.resume__hero--avatar {
+		flex: unset;
+		width: 320px;
+		height: 320px;
+		margin: 0 auto;
+	}
+
+	.resume__hero--avatar img {
+		padding: 0 15px;
+	}
+
+	.resume__hero--contact-info {
+		flex: unset;
+	}
+}
+
+@media screen and (max-width: 576px) {
+	.contact-info_wrap {
+		padding: 30px 15px;
+	}
+
+	.contact-info__item {
+		grid-template-columns: 70px 2fr;
+	}
+
+	.contact-info__header {
+		font-size: 35px;
+	}
+
+	.contact-info__sub-header {
+		font-size: 18px;
+	}
+
+	.contact-info__link svg {
+		height: 20px;
+	}
+
+	.contact-info__link + .contact-info__link {
+		border-left: 2px solid #fdcc00
+	}
+}
+
 /*Intro section*/
 .resume__intro p {
 	font-size: 17px;
 	color: var(--secondary-text-color);
+}
+
+@media screen and (max-width: 576px) {
+	.resume__intro p {
+		font-size: 16px;
+	}
 }
 
 /*Skills section*/
@@ -207,22 +317,27 @@ body {
 	z-index: 0;
 }
 
-.resume__skills--item.html:before {
+.main-skills .resume__skills--item:before {
+	width: 0;
+	transition: 1s;
+}
+
+.resume__skills--item.html.active:before {
 	width: 70%;
 	background: #593fd9;
 }
 
-.resume__skills--item.css:before {
+.resume__skills--item.css.active:before {
 	width: 70%;
 	background: var(--text-decoration-color);
 }
 
-.resume__skills--item.js:before {
+.resume__skills--item.js.active:before {
 	width: 50%;
 	background: #27c44f;
 }
 
-.resume__skills--item.vue:before {
+.resume__skills--item.vue.active:before {
 	width: 15%;
 	background: #c93030;
 }
@@ -275,11 +390,26 @@ body {
 	z-index: 1;
 }
 
+@media screen and (max-width: 576px) {
+	.resume__skills {
+		gap: 10px;
+	}
+
+	.main-skills,
+	.worked-with {
+		width: 100%;
+	}
+
+	.languages-item {
+		width: 100%;
+	}
+
+	.languages-item + .languages-item {
+		margin-top: 10px !important;
+	}
+}
+
 /*Education section*/
-.resume__education {}
-
-.resume__education--list {}
-
 .resume__education--item {
 	box-shadow: 0 1px 10px 2px #b9b1b170;
 	padding: 20px;
@@ -306,6 +436,24 @@ body {
 .resume__education--item_years {
 	font-size: 16px;
 	color: var(--secondary-text-color)
+}
+
+@media screen and (max-width: 576px) {
+	.resume__education--item {
+		padding: 10px;
+	}
+
+	.resume__education--item_speciality {
+		font-size: 16px;
+	}
+
+	.resume__education--item_institution {
+		font-size: 15px;
+	}
+
+	.resume__education--item_years {
+		font-size: 14px;
+	}
 }
 
 /*Likes section*/
@@ -368,4 +516,17 @@ body {
 	text-align: center;
 	color: white;
 	z-index: 2;
+}
+
+@media screen and (max-width: 767px) {
+	.resume__likes--list {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 20px;
+	}
+}
+
+@media screen and (max-width: 576px) {
+	.resume__likes--list {
+		grid-template-columns: 1fr;
+	}
 }
