@@ -60,6 +60,37 @@ body {
 	font-size: 18px;
 }
 
+.rocket {
+	position: fixed;
+	right: 50px;
+	bottom: 50px;
+	opacity: 0;
+	visibility: hidden;
+	width: 50px;
+	height: 50px;
+	background: var(--icon-color);
+	border: 1px solid  var(--text-decoration-color);
+	transition: .4s;
+}
+
+.rocket:before {
+	content: "";
+	position: absolute;
+	top: calc(50% + 5px);
+	left: 50%;
+	transform: translate(-50%, -50%) rotate(45deg);
+	display: block;
+	width: 20px;
+	height: 20px;
+	border-top: 2px solid var(--text-decoration-color);
+	border-left: 2px solid var(--text-decoration-color);
+}
+
+.rocket.active {
+	visibility: visible;
+	opacity: 1;
+}
+
 /*Hero section*/
 .resume__hero {}
 
