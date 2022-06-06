@@ -8,14 +8,13 @@
     animation();
 
     function activeRocket() {
-        let scrolled = window.scrollY,
-            coords = document.documentElement.clientHeight;
+        let scrolled = window.scrollY;
 
-        if (scrolled > coords) {
+        if (scrolled > 200) {
             rocketBtn.classList.add('active');
         }
 
-        if (scrolled < coords) {
+        if (scrolled < 200) {
             rocketBtn.classList.remove('active');
         }
     }
