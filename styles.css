@@ -333,12 +333,12 @@ body {
 }
 
 .resume__skills--item.js.active:before {
-	width: 50%;
+	width: 60%;
 	background: #27c44f;
 }
 
 .resume__skills--item.vue.active:before {
-	width: 15%;
+	width: 40%;  
 	background: #c93030;
 }
 
