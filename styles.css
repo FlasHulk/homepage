@@ -410,16 +410,19 @@ body {
 }
 
 /*Education section*/
-.resume__education--item {
+.resume__education--item,
+.resume__project--item {
 	box-shadow: 0 1px 10px 2px #b9b1b170;
 	padding: 20px;
 }
 
-.resume__education--item + .resume__education--item {
+.resume__education--item + .resume__education--item,
+.resume__project--item + .resume__project--item {
 	margin-top: 20px;
 }
 
-.resume__education--item_speciality {
+.resume__education--item_speciality,
+.resume__project--item_name {
 	padding-bottom: 20px;
 	font-size: 18px;
 	font-weight: bold;
@@ -433,13 +436,15 @@ body {
 	color: var(--secondary-text-color);
 }
 
-.resume__education--item_years {
+.resume__education--item_years,
+.resume__project--item_description {
 	font-size: 16px;
 	color: var(--secondary-text-color)
 }
 
 @media screen and (max-width: 576px) {
-	.resume__education--item {
+	.resume__education--item,
+	.resume__project--item {
 		padding: 10px;
 	}
 
@@ -456,6 +461,37 @@ body {
 	}
 }
 
+/*Project section*/
+
+.resume__project--item {
+	display: block;
+	text-decoration: none;
+	color: var(--primary-text-color);
+	transition: .3s;
+}
+
+.resume__project--item:hover {
+	box-shadow: 0 1px 10px 2px rgba(26, 26, 26, 0.44);
+}
+
+.resume__project--item + .resume__project--item {
+	margin-top: 20px;
+}
+
+.resume__project--item_description {
+	color: var(--primary-text-color);
+}
+
+.resume__project--item_description span {
+	display: block;
+	color: var(--secondary-text-color);
+}
+
+.resume__project--item_info {
+	font-size: 16px;
+	color: var(--primary-text-color);
+	margin-top: 20px;
+}
 /*Likes section*/
 
 .resume__likes {}
