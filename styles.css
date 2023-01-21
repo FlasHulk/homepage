@@ -301,8 +301,7 @@ body {
 	margin-top: 10px;
 }
 
-.resume__skills--item .item-name,
-.resume__skills--item .item-percent {
+.resume__skills--item .item-name{
 	position: relative;
 }
 
@@ -323,22 +322,22 @@ body {
 }
 
 .resume__skills--item.html.active:before {
-	width: 70%;
+	width: 100%;
 	background: #593fd9;
 }
 
 .resume__skills--item.css.active:before {
-	width: 70%;
+	width: 100%;
 	background: var(--text-decoration-color);
 }
 
 .resume__skills--item.js.active:before {
-	width: 60%;
+	width: 100%;
 	background: #27c44f;
 }
 
 .resume__skills--item.vue.active:before {
-	width: 40%;  
+	width: 100%;
 	background: #c93030;
 }
 
