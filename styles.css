@@ -321,25 +321,25 @@ body {
 	transition: 1s;
 }
 
-.resume__skills--item.html.active:before {
+.resume__skills--item:nth-child(odd).active:before {
 	width: 100%;
 	background: #593fd9;
 }
 
-.resume__skills--item.css.active:before {
-	width: 100%;
-	background: var(--text-decoration-color);
-}
+/*.resume__skills--item.css.active:before {*/
+/*	width: 100%;*/
+/*	background: var(--text-decoration-color);*/
+/*}*/
 
-.resume__skills--item.js.active:before {
+.resume__skills--item:nth-child(even).active:before {
 	width: 100%;
 	background: #27c44f;
 }
 
-.resume__skills--item.vue.active:before {
-	width: 100%;
-	background: #c93030;
-}
+/*.resume__skills--item.vue.active:before {*/
+/*	width: 100%;*/
+/*	background: #c93030;*/
+/*}*/
 
 .worked-with .resume__skills--item {
 	color: gray;
